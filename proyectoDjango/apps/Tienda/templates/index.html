@@ -1,0 +1,168 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+{% block body %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="containerCarousel ">
+    <div id="carouselExample" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src= "{% static 'img/first slide.png' %}" class="d-block w-100" alt="...">
+                <div class="carousel-caption">
+                </div>
+                <div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="cards-wrapper">
+
+                    <div class="container-fluid text-center ">
+                        <div class="row d-flex">
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{% static 'img/orquidea.png' %}" height="450px" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Orquidea</h5>
+                                        <p class="card-text"></p>
+                                        <a href="productos.html" class="btn btn-primary">Ver Produtos</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{% static 'img/bonsai.png' %}" height="450" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Bonsai</h5>
+                                        <p class="card-text"></p>
+                                        <a href="productos.html" class="btn btn-primary">Ver Produtos</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="card">
+                                    <img src="{% static 'img/rosas.png' %}" height="450px" class="card-img-top" alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Rosas</h5>
+                                        <p class="card-text"></p>
+                                        <a href="productos.html" class="btn btn-primary">Ver Produtos</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item ">
+                <div class="containerJardin">
+                    <div class="container text-center">
+                        <div class="row row-cols-2">
+                            <div class="col">
+                                <img src="{% static 'img/jardinFamiliar.png' %}" height="550px" alt="">
+                            </div>
+                            <div class="col">
+                                <div class="cardJardin">
+                                    <div class="card-body">
+                                        <h5 class="card-title">¿Quieres unirte a nuestra gran familia?</h5>
+                                        <p class="card-text">¡Hazte socio con una donacion voluntaria!</p>
+                                        <a href="suscripcionn.html" class="btn btn-primary">Unirse</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+<!--         <div class="container-fluid">
+            <div class="row p-5 bg-secundary ">
+                <div class="col-lg">
+                    <div class="text-center">
+                        <img src="{% static 'img/logoo.png' %}" height="150px" class="rounded" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Acerca de nosotros</p>
+                    <div class="containerContacto">
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="">
+                                <h6>Quienes Somos</h6>
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="productos.html">
+                                <h6>Productos</h6>
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="seguimientoo.html">
+                                <h6>Seguimiento</h6>
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-secondary text-decoration-none" href="suscripcionn.html">
+                                <h6>Suscripción</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Redes Sociales</p>
+                    <div class="mb-2">
+                        <div class="containerContacto">
+                            <a class="text-secondary text-decoration-none" href="https://www.facebook.com/">
+                                <h6>Facebook</h6>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="containerContacto">
+                            <a class="text-secondary text-decoration-none" href="https://www.instagram.com/">
+                                <h6>Instagram</h6>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Contacto</p>
+                    <div class="mb-2">
+                        <a class="text-secondary text-decoration-none">
+                            <h6>jardineria@gmail.com</h6>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="text-secondary text-decoration-none">
+                            <h6>+56912344321</h6>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div> -->
+
+
+
+
+        <script src="{% static 'js/apiClima.js' %}"></script>
+        <script src="{% static 'js/reloj.js' %}"></script>
+        <script src="{% static 'js/darkMode.js' %}"></script>
+        {% endblock %}
+
+

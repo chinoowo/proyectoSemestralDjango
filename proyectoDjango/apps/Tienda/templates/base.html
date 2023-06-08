@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    {% block head %}
+    {% load static %}
+
+    {% endblock %}
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <nav class="navbar navbar-expand-lg bg-white ">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="productos.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="suscripcionn.html">Suscripción</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="seguimientoo.html">Seguimiento</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Admin
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="agregarProductos.html">Agregar productos</a></li>
+                            <li><a class="dropdown-item" href="editarProductos.html">Editar los productos </a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="listarProductos.html">Listar Productos</a></li>
+                        </ul>
+                    </li>
+                    <div class="container-fluid">
+                        <div id="relojnumerico" class="reloj" onload="cargarReloj()">
+                            <span> 00 : </span>
+                            <span> 00 : </span>
+                            <span> 00 </span>
+                        </div>
+                    </div>
+                </ul>
+
+                <div class="container-fluid-api">
+                    <div class="temp">°C</div>
+                    <div class="summary"></div>
+                    <div class="location"></div>
+                </div>
+
+
+
+
+                <div class="container-fluid-5">
+                    <input id="checkItem" type="checkBox" onclick="enableDarkMode()">
+                </div>
+
+    </nav>
+
+    
+
+    {% block body %}
+
+
+
+
+    {% endblock %}
+        <footer>
+        <div class="container-fluid">
+            <div class="row p-5 bg-secundary ">
+                <div class="col-lg">
+                    <div class="text-center">
+                        <img src="{% static 'img/logoo.png' %}" height="150px" class="rounded" alt="...">
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Acerca de nosotros</p>
+                    <div class="containerContacto">
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="">
+                                <h6>Quienes Somos</h6>
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="productos.html">
+                                <h6>Productos</h6>
+                            </a>
+                        </div>
+                        <div class="mb-2">
+                            <a class="text-secondary text-decoration-none" href="seguimientoo.html">
+                                <h6>Seguimiento</h6>
+                            </a>
+                        </div>
+                        <div class="mb-3">
+                            <a class="text-secondary text-decoration-none" href="suscripcionn.html">
+                                <h6>Suscripción</h6>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Redes Sociales</p>
+                    <div class="mb-2">
+                        <div class="containerContacto">
+                            <a class="text-secondary text-decoration-none" href="https://www.facebook.com/">
+                                <h6>Facebook</h6>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="containerContacto">
+                            <a class="text-secondary text-decoration-none" href="https://www.instagram.com/">
+                                <h6>Instagram</h6>
+                            </a>
+                        </div>
+                    </div>
+        
+                </div>
+                <div class="col-lg">
+                    <p class="h4">Contacto</p>
+                    <div class="mb-2">
+                        <a class="text-secondary text-decoration-none">
+                            <h6>jardineria@gmail.com</h6>
+                        </a>
+                    </div>
+                    <div class="mb-2">
+                        <a class="text-secondary text-decoration-none">
+                            <h6>+56912344321</h6>
+                        </a>
+                    </div>
+                </div>
+        
+            </div>
+        
+        </div>
+    </footer>
+
+
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js"
+        integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i"
+        crossorigin="anonymous"></script>
+
+
+
+
+        
+    {% block script %}
+    
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,106 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+<div class="containerSocio pb-2">
+    <br>
+    <h3>Hazte socio!</h3>
+
+    <h6>Registrate para realizar la donacion</h6>
+</div>
+
+
+<div class="container-fluid-2">
+    <form action="#">
+        <div class="form-group">
+
+            <div class="col-lg-5">
+                <label for="txtNombre">Ingrese nombre</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ej:juan perez"
+                    id="txtNombre">
+                <small id="valNombre">Debe ingresar su nombre</small>
+                <br>
+                <label for="txtRut">Ingrese su rut</label>
+                <input onblur="validarFormulario()" type="text" class="form-control" placeholder="Ej:12312333-2"
+                    id="txtRut">
+                <small id="valRut">Debe ingresar rut</small>
+                <br>
+                <label for="txtCorreo">Ingrese correo</label>
+                <input onblur="validarFormulario()" type="email" class="form-control" placeholder="Ej:correo@gmail.com"
+                    id="txtCorreo">
+                <small id="valCorreo">Debe ingresar correo</small>
+                <br>
+                <label for="txtContraseña">Ingrese contraseña</label>
+                <input onblur="validarFormulario()" type="password" class="form-control" placeholder="*********"
+                    id="txtContraseña">
+                <small id="valPassword">Debe ingresar una contraseña</small>
+
+                <label for="numberDonacion"></label>
+                <input onblur="validarFormulario()" type="number" value="1" min="1" class="form-control"
+                    placeholder="Ej:1000000" id="numberDonacion">
+                <small id="valDonacion">Debe ingresar donacion</small>
+            </div>
+        </div>
+
+        <div class="container mb-5">
+            <!-- Button trigger modal -->
+            <button id="buttonModal" type="button" class="btn btn-success" data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop">
+                Enviar
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="staticBackdropLabel">¡Gracias por unirte a nuestra familia!
+                            </h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Al presionar aceptar confirmaras la donacion realizada y seras registrado como muebro de
+                                nuestra
+                                comunidad jardinera,Recibiras noticias de descuentos y ofertas especiales para
+                                miembros!.</p>
+                            <p>Recuerda llenar todos los campos previamente.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" id="btnCerrar" class="btn btn-success"
+                                data-bs-dismiss="modal">Aceptar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="container text-center">
+    <p id="primero">Gracias por visitar nuestra pagina :)!!!</p>
+</div>
+
+
+
+<div class="container text-center">
+    <button id="ocultar" class="btn btn-danger">Ocultar</button>
+    <button id="mostrar" class="btn btn-primary">Mostrar</button>
+</div>
+
+
+
+
+
+
+<script src="{% static 'js/form.js' %}"></script>
+<script src="{% static 'js/jquery-3.6.4.min.js' %}"></script>
+<script src="{% static 'js/animacion.js' %}"></script>
+<script src="{% static 'js/apiClima.js' %}"></script>
+<script src="{% static 'js/reloj.js' %}"></script>
+<script src="{% static 'js/darkMode.js' %}"></script>
+{% endblock %}

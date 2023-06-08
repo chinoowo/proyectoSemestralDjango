@@ -1,0 +1,122 @@
+{% extends './base.html' %}
+
+{% load static %}
+
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+<div class="d-flex justify-content-end ">
+    <header class="container-fluid  position-sticky top-0">
+        <ul class="nav nav-pills mb-3 container justify-content-end" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile"
+                    type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Productos</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact"
+                    type="button" role="tab" aria-controls="pills-contact" aria-selected="false"><i
+                        class="material-icons">add_shopping_cart</i></a>
+            </li>
+        </ul>
+    </header>
+</div>
+<div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+    Producto Añadido al carrito!
+</div>
+<div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+    Producto removido!
+</div>
+
+<div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        1
+    </div>
+    <div class="tab-pane fade show active container" id="pills-profile" role="tabpanel"
+        aria-labelledby="pills-profile-tab">
+
+
+
+
+
+        <div class="alert container position-sticky top-0 alert-primary hide" role="alert">
+            Producto Añadido al carrito!
+        </div>
+        <div class="alert container position-sticky top-0 alert-danger remove" role="alert">
+            Producto removido!
+        </div>
+
+        <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                1
+            </div>
+            <div class="tab-pane fade show active container" id="pills-profile" role="tabpanel"
+                aria-labelledby="pills-profile-tab">
+
+
+                <div class="containerProductos">
+                    <div class="cards-wrapper2">
+                        <div class="container-fluid text-center  ">
+                            <div class="row d-flex">
+                                <div class="col">
+                                    <div class="cardProductos">
+                                        <img src="imgProductos/jade.png" height="300px" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Jade</h5>
+                                            <h6><span class="precio">$5000</span></h6>
+                                            <button class="btn btn-success button">Añadir al Carrito</button>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="tab-pane fade carrito" id="pills-contact" role="tabpanel"
+                    aria-labelledby="pills-contact-tab">
+                    <br>
+                    <table class="table  table-hover">
+                        <thead>
+                            <tr class="text-primary">
+                                <th scope="col">#</th>
+                                <th scope="col">Productos</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                        </tbody>
+                    </table>
+                    <div class="row mx-4 ">
+                        <div class="col">
+                            <h3 class="itemCartTotal text-grey">Total: 0</h3>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <button class="btn btn-success">COMPRAR</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <script src="{% static 'js/carrito.js' %}"></script>
+            <script src="{% static 'js/apiClima.js' %}"></script>
+            <script src="{% static 'js/reloj.js' %}"></script>
+            <script src="{% static 'js/darkMode.js' %}"></script>
+            {% endblock %}
