@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import *
 # Create your views here.
 
 def cargarInicio(request):
@@ -15,7 +15,8 @@ def cargarSuscripcion(request):
 
 
 def cargarProductos(request):
-    return render(request,"productos.html")
+    productos=Producto.objects.all()
+    return render(request,"productos.html",{"producto":productos})
 
 
 def cargarAgregar(request):

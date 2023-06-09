@@ -24,5 +24,5 @@ class Producto(models.Model):
 
 
     def __str__(self):
-        txt = "Producto N° {0}  -  Stock {1}  -  Precio {2}  -  Fecha {3}"
-        return txt.format(self.sku, self.stock, self.precio, self.fecha)
+        txt = "Producto N° {0}  -  Stock {1}  -  Precio {2} "
+        return txt.format(self.sku, self.stock, self.precio)
