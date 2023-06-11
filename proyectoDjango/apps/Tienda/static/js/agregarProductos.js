@@ -1,26 +1,49 @@
 $(function () {
     $("#agregarProductos").validate({
         rules: {
-            txtIdProducto: { 
-                required: true, 
-                number: true },
-            txtNombreProducto: { 
-                required: true, 
-                minlength: 3 },
-            txtPrecioProducto: { 
-                required: true, 
-                number: true },
+            txtSku: {
+                required: true,
+                number: true,
+                minlength: 3
+            },
+            txtNombre: {
+                required: true,
+                minlength: 3
+            },
+            txtPrecio: {
+                required: true,
+                number: true
+            },
+            txtStock: {
+                required: true,
+                number: true
+            },
+            txtImagen: {
+                required: true,
+            },
+            cmbCategoria: {
+                required: true,
+            },
         }, messages: {
-            txtIdProducto: {
+            txtSku: {
+                required: "Este campo es obligatorio",
+                number: "Este campo debe ser numerico",
+                minlength: "Este campo debe tener minimo 3 caracteres"
+            }, txtNombre: {
+                required: "Este campo es obligatorio",
+                minlength: "Este campo debe tener minimo 3 caracteres"
+            }, txtPrecio: {
                 required: "Este campo es obligatorio",
                 number: "Este campo debe ser numerico"
-            },txtNombreProducto: {
-                required: "Este campo es obligatorio", 
-                minlength: "Este campo debe tener minimo 3 caracteres" 
-            },txtPrecioProducto: {
-                required: "Este campo es obligatorio", 
-                number: "Este campo debe ser numerico" 
+            }, txtStock: {
+                required: "Este campo es obligatorio",
+                number: "Este campo debe ser numerico"
+            }, txtImagen: {
+                required: "Este campo es obligatorio",
+            }, cmbCategoria: {
+                required: "Este campo es obligatorio",
             }
+            
         }
     })
 

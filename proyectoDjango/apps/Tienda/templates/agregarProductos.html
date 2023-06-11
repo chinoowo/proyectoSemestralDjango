@@ -9,22 +9,22 @@
 
 <div class="containerAgregar">
     <h1>Agregar Productos</h1>
-    <form action="/agregarProductosForm" method="POST">{% csrf_token %}
+    <form id="agregarProductos" action="/agregarProductosForm" method="POST">{% csrf_token %}
         <div class="row mt-5">
             <div class="col-md-4">
-                <label for="">SKU:</label>
+                <label for="txtSku">SKU:</label>
                 <input name="txtSku" id="txtSku" type="text" class="form-control">
             </div>
             <div class="col-md-8">
-                <label for="">Nombre:</label>
+                <label for="txtNombre">Nombre:</label>
                 <input name="txtNombre" id="txtNombre" type="text" class="form-control">
             </div>
             <div class="col-md-4">
-                <label for="">Precio:</label>
+                <label for="txtPrecio">Precio:</label>
                 <input name="txtPrecio" id="txtPrecio" type="text" class="form-control">
             </div>
             <div class="col-md-4">
-                <label for="">Stock:</label>
+                <label for="txtStock">Stock:</label>
                 <input name="txtStock" id="txtStock" type="text" class="form-control">
             </div>
             <div class="col-md-4">
@@ -37,7 +37,7 @@
                 </select>
             </div>
             <div class="col-md-12">
-                <label for="">Imagen:</label>
+                <label for="txtImagen">Imagen:</label>
                 <input name="txtImagen" id="txtImagen" type="text" class="form-control">
             </div>
         </div>

@@ -3,7 +3,7 @@ $(function () {
         rules: {
             txtIdProducto: { 
                 required: true, 
-                number: true },
+                number: true, },
             txtNombreProducto: { 
                 required: true, 
                 minlength: 3 },
