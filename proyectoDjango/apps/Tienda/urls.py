@@ -22,8 +22,9 @@ urlpatterns = [
     path('editarProductos.html',views.cargarEditar),
 
 
-    path('listarProductos.html',views.cargarListar)
+    path('listarProductos.html',views.cargarListar),
+
+    path('agregarProductosForm',views.agregarProducto)
 
 
-    
 ]

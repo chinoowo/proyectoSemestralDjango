@@ -45,8 +45,8 @@
             <div class="cards-wrapper2">
                 <div class="container-fluid text-center  ">
                     <div class="row d-flex">
-                        <h1>Productos</h1>
-                        {% for p in producto %}
+                        <h1>Plantas</h1>
+                        {% for p in cate_plantas %}
                         <div class="col">
                             <div class="cardProductos">
                                 <img src="{{p.imagenUrl}}" height="300px" class="card-img-top" alt="...">
@@ -54,6 +54,22 @@
                                     <h5 class="card-title">{{ p.nombre }}</h5>
                                     <h6><span class="precio">${{ p.precio }}</span></h6>
                                     <button class="btn btn-success button">Añadir al Carrito</button>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+
+                    <div class="row">
+                        <h1>Herramientas de Jardineria</h1>
+                        {% for p in cate_jardineria %}
+                        <div class="col">
+                            <div class="card" style="width: 18rem;">
+                                <img src="{{p.imagen_url}}" class="card-img-top" alt="...">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ p.nombre }}</h5>
+                                    <p class="card-text">{{p.precio}}</p>
+                                    <a href="#" class="btn btn-primary">Añadir al Carrito</a>
                                 </div>
                             </div>
                         </div>

@@ -7,33 +7,43 @@
 <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 
-<div class="d-flex justify-content-center mt-5">
+<div class="containerAgregar">
     <h1>Agregar Productos</h1>
-</div>
-
-<div class="container">
-    <form id="agregarProductos" action="">
-        <div class="row">
-            <div class="col mt-3">
-                <label for="txtIdProducto">Id:</label>
-                <input id="txtIdProducto" name="txtIdProducto" type="text" class="form-control">
-                <br>
-                <label for="txtNombreProducto">Nombre:</label>
-                <input id="txtNombreProducto" name="txtNombreProducto" type="text" class="form-control">
-                <br>
-                <label for="txtPrecioProducto">Precio:</label>
-                <input id="txtPrecioProducto" name="txtPrecioProducto" type="number" class="form-control">
-                <br>
-
+    <form action="/agregarProductosForm" method="POST">{% csrf_token %}
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <label for="">SKU:</label>
+                <input name="txtSku" id="txtSku" type="text" class="form-control">
             </div>
-            <!-- <div class="col mt-3">
-                <br> 
-                <br>
-            </div> -->
-            <button class="btn btn-success mt-3">Agregar</button>
+            <div class="col-md-8">
+                <label for="">Nombre:</label>
+                <input name="txtNombre" id="txtNombre" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Precio:</label>
+                <input name="txtPrecio" id="txtPrecio" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Stock:</label>
+                <input name="txtStock" id="txtStock" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="cmbCategoria">Categoria:</label>
+                <select id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
+                    <option disabled selected>Seleccione</option>
+                    {% for c in cate %}
+                    <option value="{{c.idCategoria}}">{{c.nombre_categoia}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label for="">Imagen:</label>
+                <input name="txtImagen" id="txtImagen" type="text" class="form-control">
+            </div>
         </div>
+
+        <button class="btn btn-success mt-5 w-100">Agregar Producto</button>
     </form>
-</div>
 </div>
 
 

@@ -271,3 +271,8 @@ input[type="checkBox"]:checked::before {
 .dark-mode tr{
     color: white;
 }
+
+.containerAgregar{
+    margin-left: 300px;
+    margin-right: 300px;
+}
