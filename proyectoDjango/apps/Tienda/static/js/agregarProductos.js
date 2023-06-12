@@ -4,7 +4,6 @@ $(function () {
             txtSku: {
                 required: true,
                 number: true,
-                minlength: 3
             },
             txtNombre: {
                 required: true,
@@ -28,7 +27,6 @@ $(function () {
             txtSku: {
                 required: "Este campo es obligatorio",
                 number: "Este campo debe ser numerico",
-                minlength: "Este campo debe tener minimo 3 caracteres"
             }, txtNombre: {
                 required: "Este campo es obligatorio",
                 minlength: "Este campo debe tener minimo 3 caracteres"
