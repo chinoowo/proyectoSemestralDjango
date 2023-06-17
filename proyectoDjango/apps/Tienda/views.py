@@ -26,7 +26,8 @@ def cargarProductos(request):
 
 def cargarAgregar(request):
     categorias=Categoria.objects.all()
-    return render(request,"agregarProductos.html",{"cate":categorias})
+    productos = Producto.objects.all()
+    return render(request,"agregarProductos.html",{"cate":categorias,"prod": productos})
 
 
 

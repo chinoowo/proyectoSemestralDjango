@@ -7,8 +7,8 @@ class Categoria(models.Model):
     nombre_categoia = models.CharField(max_length=22)
 
     def __str__(self):
-        txt = "{0}  -  {1}"
-        return txt.format(self.idCategoria,self.nombre_categoia)
+        txt = "{0}"
+        return txt.format(self.nombre_categoia)
 
 
 
