@@ -48,8 +48,8 @@
                         <h1>Plantas</h1>
                         {% for p in cate_plantas %}
                         <div class="col">
-                            <div class="cardProductos">
-                                <img src="{{p.imagenUrl}}" height="300px" class="card-img-top" alt="...">
+                            <div class="cardProductos" style="width: 18rem;">
+                                <img src="{{p.imagenUrl.url}}" height="280px" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ p.nombre }}</h5>
                                     <h6><span class="precio">${{ p.precio }}</span></h6>
@@ -60,16 +60,16 @@
                         {% endfor %}
                     </div>
 
-                    <div class="row">
+                    <div class="row d-flex">
                         <h1>Herramientas de Jardineria</h1>
                         {% for p in cate_jardineria %}
                         <div class="col">
-                            <div class="card" style="width: 18rem;">
-                                <img src="{{p.imagen_url}}" class="card-img-top" alt="...">
+                            <div class="cardProductos" style="width: 18rem;">
+                                <img src="{{p.imagenUrl.url}}" height="280px" class="card-img-top" alt="...">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ p.nombre }}</h5>
-                                    <p class="card-text">{{p.precio}}</p>
-                                    <a href="#" class="btn btn-primary">Añadir al Carrito</a>
+                                    <h6><span class="precio">${{ p.precio }}</span></h6>
+                                    <button class="btn btn-success button">Añadir al Carrito</button>
                                 </div>
                             </div>
                         </div>

@@ -1,5 +1,8 @@
 from django.shortcuts import render,redirect
 from .models import *
+
+import os
+from django.conf import settings 
 # Create your views here.
 
 def cargarInicio(request):
@@ -25,12 +28,7 @@ def cargarAgregar(request):
     categorias=Categoria.objects.all()
     return render(request,"agregarProductos.html",{"cate":categorias})
 
-def cargarEditar(request):
-    return render(request,"editarProductos.html")
 
-
-def cargarListar(request):
-    return render(request,"listarProductos.html")
 
 def agregarProducto(request):
     """ print("AGREGAR PRODUCTOS",request.POST) """
@@ -40,8 +38,14 @@ def agregarProducto(request):
     v_nombre=request.POST['txtNombre']
     v_precio=request.POST['txtPrecio']
     v_stock=request.POST['txtStock']
-    v_imagen=request.POST['txtImagen']
+    v_imagen=request.FILES['txtImagen']
 
     Producto.objects.create(sku=v_sku,nombre=v_nombre,precio=v_precio,stock=v_stock,imagenUrl=v_imagen,categoriaId=v_categoria)
 
-    return redirect('/agregarProductos.html')    
+    return redirect('/agregarProductos.html') 
+
+
+def cargarEditarProducto(request,sku):
+    prod = Producto.objects.get(sku = sku)
+    cate = categorias=Categoria.objects.all()
+    return render(request,"editarProducto.html",{"prod":prod,"cate":categorias})
