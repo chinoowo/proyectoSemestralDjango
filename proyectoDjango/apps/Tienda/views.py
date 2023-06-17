@@ -48,13 +48,12 @@ def agregarProducto(request):
 
 def cargarEditarProducto(request,sku):
     prod = Producto.objects.get(sku = sku)
-    cate = categorias=Categoria.objects.all()
+    categorias=Categoria.objects.all()
     return render(request,"editarProductos.html",{"prod":prod,"cate":categorias})
 
 
 def editarProducto(request):
-    v_categoria = Categoria.objects.get(
-        id_categoria=request.POST['cmbCategoria'])
+    v_categoria = Categoria.objects.get(idCategoria=request.POST['cmbCategoria'])
 
     v_sku = request.POST['txtSku']
     productoBD = Producto.objects.get(sku=v_sku)
@@ -64,8 +63,7 @@ def editarProducto(request):
 
     try:
         v_imagen = request.FILES['txtImagen']
-        ruta_imagen = os.path.join(
-            settings.MEDIA_ROOT, str(productoBD.imagenUrl))
+        ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(productoBD.imagenUrl))
         os.remove(ruta_imagen)
     except:
         v_imagen = productoBD.imagenUrl
@@ -78,4 +76,4 @@ def editarProducto(request):
 
     productoBD.save()
 
-    return redirect('agregarProductos')
+    return redirect('/agregarProductos')

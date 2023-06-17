@@ -4,24 +4,20 @@ from . import views
 urlpatterns = [
     path('',views.cargarInicio),
 
-    path('index.html',views.cargarInicio),
+    path('seguimientoo',views.cargarSeguimiento),
 
 
-    path('seguimientoo.html',views.cargarSeguimiento),
+    path('suscripcionn',views.cargarSuscripcion),
 
 
-    path('suscripcionn.html',views.cargarSuscripcion),
+    path('productos',views.cargarProductos),
 
 
-    path('productos.html',views.cargarProductos),
-
-
-    path('agregarProductos.html',views.cargarAgregar),
-
-
-    path('agregarProductosForm',views.agregarProducto),
+    path('agregarProductos',views.cargarAgregar),
 
     path('editarProducto/<sku>',views.cargarEditarProducto),
+
+    path('agregarProductosForm',views.agregarProducto),
 
     path('editarProductos',views.editarProducto)
 
