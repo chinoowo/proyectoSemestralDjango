@@ -43,7 +43,7 @@ def agregarProducto(request):
 
     Producto.objects.create(sku=v_sku,nombre=v_nombre,precio=v_precio,stock=v_stock,imagenUrl=v_imagen,categoriaId=v_categoria)
 
-    return redirect('agregarProductos.html') 
+    return redirect('/agregarProductos') 
 
 
 def cargarEditarProducto(request,sku):
@@ -76,4 +76,12 @@ def editarProducto(request):
 
     productoBD.save()
 
+    return redirect('/agregarProductos')
+
+
+def eliminarProducto(request, sku):
+    producto = Producto.objects.get(sku=sku)
+    ruta_imagen = os.path.join(settings.MEDIA_ROOT, str(producto.imagenUrl))
+    os.remove(ruta_imagen)
+    producto.delete()
     return redirect('/agregarProductos')

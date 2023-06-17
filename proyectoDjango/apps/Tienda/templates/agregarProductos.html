@@ -9,7 +9,7 @@
 
 <div class="containerAgregar">
     <h1>Agregar Productos</h1>
-    <form id="agregarProductos" action="/agregarProductosForm" method="POST" enctype="multipart/form-data">{% csrf_token%}
+    <form id="agregarProductos" action="/agregarProductosForm" method="POST" enctype="multipart/form-data">{%csrf_token%}
         <div class="row mt-5">
             <div class="col-md-4">
                 <label for="txtSku">SKU:</label>
@@ -69,8 +69,9 @@
                 <td>{{p.precio}}</td>
                 <td>{{p.categoriaId}}</td>
                 <td>{{p.stock}}</td>
-                <td><a href="editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a></td>
-                <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <td><a href="editarProducto/{{p.sku}}" class="btn btn-primary">Editar</a>
+                
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Eliminar
                     </button>
                 </td>
@@ -80,15 +81,16 @@
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Eliminar</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
-                                ...
+                                <h6>¿Desea eliminar el producto seleccionado?</h6>
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-secondary"
+                                    data-bs-dismiss="modal">Cancelar</button>
                                 <a href="eliminarProducto/{{p.sku}}" class="btn btn-danger">Confirmar</a>
                             </div>
                         </div>
