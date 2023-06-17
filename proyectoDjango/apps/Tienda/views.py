@@ -43,10 +43,39 @@ def agregarProducto(request):
 
     Producto.objects.create(sku=v_sku,nombre=v_nombre,precio=v_precio,stock=v_stock,imagenUrl=v_imagen,categoriaId=v_categoria)
 
-    return redirect('/agregarProductos.html') 
+    return redirect('agregarProductos.html') 
 
 
 def cargarEditarProducto(request,sku):
     prod = Producto.objects.get(sku = sku)
     cate = categorias=Categoria.objects.all()
-    return render(request,"editarProducto.html",{"prod":prod,"cate":categorias})
+    return render(request,"editarProductos.html",{"prod":prod,"cate":categorias})
+
+
+def editarProducto(request):
+    v_categoria = Categoria.objects.get(
+        id_categoria=request.POST['cmbCategoria'])
+
+    v_sku = request.POST['txtSku']
+    productoBD = Producto.objects.get(sku=v_sku)
+    v_nombre = request.POST['txtNombre']
+    v_precio = request.POST['txtPrecio']
+    v_stock = request.POST['txtStock']
+
+    try:
+        v_imagen = request.FILES['txtImagen']
+        ruta_imagen = os.path.join(
+            settings.MEDIA_ROOT, str(productoBD.imagenUrl))
+        os.remove(ruta_imagen)
+    except:
+        v_imagen = productoBD.imagenUrl
+
+    productoBD.nombre = v_nombre
+    productoBD.precio = v_precio
+    productoBD.stock = v_stock
+    productoBD.categoriaId = v_categoria
+    productoBD.imagenUrl= v_imagen
+
+    productoBD.save()
+
+    return redirect('agregarProductos')

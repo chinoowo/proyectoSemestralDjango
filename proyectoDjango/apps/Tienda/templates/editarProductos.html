@@ -1,0 +1,49 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block body %}
+
+<div class="container">
+    <h1>Editar Productos</h1>
+    <form action="/editarProducto" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <label for="">SKU:</label>
+                <input readonly value="{{prod.sku}}" name="txtSku" id="txtSku" type="text" class="form-control">
+            </div>
+            <div class="col-md-8">
+                <label for="">Nombre:</label>
+                <input value="{{prod.nombre}}" name="txtNombre" id="txtNombre" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Precio:</label>
+                <input value="{{prod.precio}}" name="txtPrecio" id="txtPrecio" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="">Stock:</label>
+                <input value="{{prod.stock}}" name="txtStock" id="txtStock" type="text" class="form-control">
+            </div>
+            <div class="col-md-4">
+                <label for="cmbCategoria">Categoria:</label>
+                <select id="cmbCategoria" name="cmbCategoria" class="form-select" aria-label="Default select example">
+                    <option disabled selected>Seleccione</option>
+                    {% for c in cate %}
+                    <option value="{{c.categoriaId}}"{% if c.idCategoria == prod.categoriaId.categoriaId %}selected {% endif %}>{{c.nombre_categoia}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-12">
+                <label for="">Imagen:</label>
+                <img src="{{prod.imagen_url.url}}" alt="" height="100">
+                <input name="txtImagen" id="txtImagen" type="file" class="form-control">
+            </div>
+        </div>
+
+        <button class="btn btn-success mt-5 w-100">Editar Producto</button>
+    </form>
+</div>
+
+
+
+{% endblock %}

@@ -23,6 +23,8 @@ urlpatterns = [
 
     path('editarProducto/<sku>',views.cargarEditarProducto),
 
+    path('editarProductos',views.editarProducto)
+
 
 
 ]
